@@ -17,12 +17,7 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-// Project gradient visuals
-const projectGradients = [
-  'linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(168,85,247,0.08) 100%)',
-  'linear-gradient(135deg, rgba(14,165,233,0.12) 0%, rgba(16,185,129,0.08) 100%)',
-  'linear-gradient(135deg, rgba(245,158,11,0.10) 0%, rgba(249,115,22,0.06) 100%)',
-];
+
 
 const projectPatterns = ['◈', '◇', '◉'];
 
@@ -77,31 +72,29 @@ export default function Projects() {
                   gap: '2rem',
                   alignItems: 'center',
                   padding: '2rem',
-                  background: 'rgba(255,255,255,0.02)',
+                  background: 'var(--bg-surface)',
                   border: '1px solid var(--border)',
-                  borderRadius: '14px',
+                  borderRadius: '8px',
                   cursor: 'default',
-                  transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
+                  transition: 'border-color 0.25s ease',
                   position: 'relative',
                   overflow: 'hidden',
                 }}
                 className="project-card"
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(99,102,241,0.35)';
-                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(99,102,241,0.08)';
+                  e.currentTarget.style.borderColor = 'var(--border-subtle)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'var(--border)';
-                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 {/* Gradient visual */}
                 <div style={{
                   width: '100%',
                   aspectRatio: '16/9',
-                  borderRadius: '10px',
-                  background: projectGradients[i],
-                  border: '1px solid rgba(255,255,255,0.06)',
+                  borderRadius: '6px',
+                  background: 'var(--bg-elevated)',
+                  border: '1px solid var(--border)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -194,18 +187,20 @@ export default function Projects() {
                     <GithubIcon size={14} />
                     GitHub
                   </a>
-                  <a
-                    id={`project-${i + 1}-demo-btn`}
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Live demo for ${project.title}`}
-                    className="btn-primary"
-                    style={{ fontSize: '0.8rem', padding: '0.5rem 0.85rem', justifyContent: 'center' }}
-                  >
-                    <ExternalLink size={14} />
-                    Demo
-                  </a>
+                  {project.demo && (
+                    <a
+                      id={`project-${i + 1}-demo-btn`}
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Live demo for ${project.title}`}
+                      className="btn-primary"
+                      style={{ fontSize: '0.8rem', padding: '0.5rem 0.85rem', justifyContent: 'center' }}
+                    >
+                      <ExternalLink size={14} />
+                      Demo
+                    </a>
+                  )}
                 </div>
 
                 {/* Arrow decoration */}

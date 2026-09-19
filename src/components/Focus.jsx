@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Brain, Cpu, BarChart2, GitBranch, Server, Layers } from 'lucide-react';
+import { Brain, Cpu, BarChart2, GitBranch, Server, Layers, Globe } from 'lucide-react';
 import { focusAreas } from '../data/portfolioData';
 
-const iconMap = { Brain, Cpu, BarChart2, GitBranch, Server, Layers };
+const iconMap = { Brain, Cpu, BarChart2, GitBranch, Server, Layers, Globe };
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -13,23 +13,7 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-const cardColors = [
-  'rgba(99,102,241,0.08)',
-  'rgba(168,85,247,0.08)',
-  'rgba(14,165,233,0.08)',
-  'rgba(16,185,129,0.08)',
-  'rgba(245,158,11,0.08)',
-  'rgba(239,68,68,0.08)',
-];
 
-const cardAccents = [
-  '#818cf8',
-  '#c084fc',
-  '#38bdf8',
-  '#34d399',
-  '#fbbf24',
-  '#f87171',
-];
 
 export default function Focus() {
   return (
@@ -99,31 +83,31 @@ export default function Focus() {
                   transition={{ duration: 0.2 }}
                   style={{
                     padding: '1.5rem',
-                    background: cardColors[i],
-                    border: '1px solid rgba(255,255,255,0.06)',
-                    borderRadius: '14px',
+                    background: 'var(--bg-surface)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '8px',
                     cursor: 'default',
                     transition: 'border-color 0.25s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = `${cardAccents[i]}40`;
+                    e.currentTarget.style.borderColor = 'var(--border-subtle)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)';
+                    e.currentTarget.style.borderColor = 'var(--border)';
                   }}
                 >
                   <div style={{
                     width: '40px',
                     height: '40px',
-                    borderRadius: '10px',
-                    background: `${cardAccents[i]}15`,
-                    border: `1px solid ${cardAccents[i]}30`,
+                    borderRadius: '6px',
+                    background: 'var(--bg-elevated)',
+                    border: '1px solid var(--border)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginBottom: '1rem',
                   }}>
-                    {IconComponent && <IconComponent size={18} style={{ color: cardAccents[i] }} />}
+                    {IconComponent && <IconComponent size={18} style={{ color: 'var(--accent)' }} />}
                   </div>
                   <h3 style={{
                     fontSize: '0.95rem',

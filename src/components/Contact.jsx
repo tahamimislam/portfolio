@@ -84,9 +84,9 @@ export default function Contact() {
   const inputStyle = (field) => ({
     width: '100%',
     padding: '0.85rem 1rem',
-    background: 'rgba(255,255,255,0.03)',
-    border: `1px solid ${errors[field] ? 'rgba(239,68,68,0.5)' : focused === field ? 'var(--accent)' : 'var(--border)'}`,
-    borderRadius: '8px',
+    background: 'transparent',
+    border: `1px solid ${errors[field] ? 'rgba(239,68,68,0.5)' : focused === field ? 'var(--border-subtle)' : 'var(--border)'}`,
+    borderRadius: '6px',
     color: 'var(--text-primary)',
     fontFamily: 'var(--font-body)',
     fontSize: '0.9rem',
@@ -120,7 +120,7 @@ export default function Contact() {
       id="contact"
       aria-label="Contact section"
       className="section-padding"
-      style={{ borderTop: '1px solid var(--border)', background: 'rgba(255,255,255,0.01)' }}
+      style={{ borderTop: '1px solid var(--border)', background: 'transparent' }}
     >
       <div className="section-container">
         <motion.div
@@ -212,28 +212,28 @@ export default function Contact() {
                       alignItems: 'center',
                       gap: '1rem',
                       padding: '1rem 1.25rem',
-                      background: 'rgba(255,255,255,0.02)',
+                      background: 'transparent',
                       border: '1px solid var(--border)',
-                      borderRadius: '10px',
+                      borderRadius: '8px',
                       textDecoration: 'none',
                       transition: 'all 0.2s ease',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = 'var(--accent)';
-                      e.currentTarget.style.background = 'rgba(99,102,241,0.05)';
+                      e.currentTarget.style.borderColor = 'var(--border-subtle)';
+                      e.currentTarget.style.background = 'var(--bg-surface)';
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.borderColor = 'var(--border)';
-                      e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
+                      e.currentTarget.style.background = 'transparent';
                     }}
                   >
                     <div style={{
                       width: '36px', height: '36px',
-                      borderRadius: '8px',
-                      background: 'rgba(99,102,241,0.1)',
-                      border: '1px solid rgba(99,102,241,0.2)',
+                      borderRadius: '6px',
+                      background: 'var(--bg-elevated)',
+                      border: '1px solid var(--border)',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      color: 'var(--accent)', flexShrink: 0,
+                      color: 'var(--text-secondary)', flexShrink: 0,
                     }}>
                       {icon}
                     </div>

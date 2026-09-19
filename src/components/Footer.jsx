@@ -1,3 +1,4 @@
+import { Code, Terminal, Camera } from 'lucide-react';
 import { personal } from '../data/portfolioData';
 
 const GithubIcon = () => (
@@ -51,7 +52,7 @@ export default function Footer() {
             color: 'var(--text-muted)',
             letterSpacing: '0.06em',
           }}>
-            CSE Undergraduate · Aspiring AI/ML Engineer
+            CSE Undergraduate · Aspiring AI Engineer
           </div>
         </div>
 
@@ -70,6 +71,9 @@ export default function Footer() {
           {[
             { icon: <GithubIcon />, href: personal.github, label: 'GitHub', id: 'footer-github-link' },
             { icon: <LinkedinIcon />, href: personal.linkedin, label: 'LinkedIn', id: 'footer-linkedin-link' },
+            { icon: <Code size={16} />, href: personal.leetcode, label: 'LeetCode', id: 'footer-leetcode-link' },
+            { icon: <Terminal size={16} />, href: personal.codeforces, label: 'Codeforces', id: 'footer-codeforces-link' },
+            { icon: <Camera size={16} />, href: personal.pexels, label: 'Pexels', id: 'footer-pexels-link' },
           ].map(({ icon, href, label, id }) => (
             <a
               key={label}
@@ -91,9 +95,9 @@ export default function Footer() {
                 transition: 'all 0.2s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--accent)';
-                e.currentTarget.style.color = 'var(--accent)';
-                e.currentTarget.style.background = 'rgba(99,102,241,0.08)';
+                e.currentTarget.style.borderColor = 'var(--border-subtle)';
+                e.currentTarget.style.color = 'var(--text-primary)';
+                e.currentTarget.style.background = 'var(--bg-surface)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = 'var(--border)';

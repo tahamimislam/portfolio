@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, ChevronDown } from 'lucide-react';
+import { ArrowRight, Download, ChevronDown, Code, Terminal, Camera } from 'lucide-react';
 
 const GithubIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -57,28 +57,6 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Ambient glow */}
-      <div style={{
-        position: 'absolute',
-        top: '20%',
-        left: '10%',
-        width: '500px',
-        height: '500px',
-        background: 'radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)',
-        pointerEvents: 'none',
-        filter: 'blur(40px)',
-      }} />
-      <div style={{
-        position: 'absolute',
-        bottom: '15%',
-        right: '5%',
-        width: '350px',
-        height: '350px',
-        background: 'radial-gradient(circle, rgba(139,92,246,0.05) 0%, transparent 70%)',
-        pointerEvents: 'none',
-        filter: 'blur(40px)',
-      }} />
-
       <div className="section-container" style={{ width: '100%', position: 'relative' }}>
         <div style={{
           display: 'grid',
@@ -100,18 +78,16 @@ export default function Hero() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                padding: '0.3rem 0.85rem',
-                border: '1px solid rgba(99,102,241,0.3)',
-                borderRadius: '100px',
+                padding: '0.25rem 0.75rem',
+                border: '1px solid var(--border)',
+                borderRadius: '4px',
                 marginBottom: '2rem',
-                background: 'rgba(99,102,241,0.06)',
+                background: 'transparent',
               }}
             >
               <span style={{
                 width: '6px', height: '6px', borderRadius: '50%',
-                background: '#4ade80',
-                boxShadow: '0 0 6px #4ade80',
-                animation: 'pulse 2s infinite',
+                background: 'var(--text-secondary)',
               }} />
               <span style={{
                 fontFamily: 'var(--font-mono)',
@@ -222,17 +198,6 @@ export default function Hero() {
               >
                 Contact Me
               </button>
-              <a
-                id="hero-cv-btn"
-                href={personal.cvLink}
-                download
-                className="btn-secondary"
-                aria-label="Download CV"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
-              >
-                <Download size={14} />
-                Download CV
-              </a>
             </motion.div>
 
             {/* Social links */}
@@ -262,7 +227,7 @@ export default function Hero() {
                   borderRadius: '6px',
                   border: '1px solid var(--border)',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--accent)'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-subtle)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.borderColor = 'var(--border)'; }}
               >
                 <GithubIcon />
@@ -283,11 +248,74 @@ export default function Hero() {
                   borderRadius: '6px',
                   border: '1px solid var(--border)',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#0ea5e9'; e.currentTarget.style.borderColor = '#0ea5e9'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-subtle)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.borderColor = 'var(--border)'; }}
               >
                 <LinkedinIcon />
                 LinkedIn
+              </a>
+              <a
+                id="hero-leetcode-link"
+                href={personal.leetcode}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LeetCode profile"
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '0.4rem',
+                  color: 'var(--text-secondary)', textDecoration: 'none',
+                  fontSize: '0.825rem', fontWeight: 500,
+                  transition: 'color 0.2s ease',
+                  padding: '0.4rem 0.5rem',
+                  borderRadius: '6px',
+                  border: '1px solid var(--border)',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-subtle)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.borderColor = 'var(--border)'; }}
+              >
+                <Code size={16} />
+                LeetCode
+              </a>
+              <a
+                id="hero-codeforces-link"
+                href={personal.codeforces}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Codeforces profile"
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '0.4rem',
+                  color: 'var(--text-secondary)', textDecoration: 'none',
+                  fontSize: '0.825rem', fontWeight: 500,
+                  transition: 'color 0.2s ease',
+                  padding: '0.4rem 0.5rem',
+                  borderRadius: '6px',
+                  border: '1px solid var(--border)',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-subtle)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.borderColor = 'var(--border)'; }}
+              >
+                <Terminal size={16} />
+                Codeforces
+              </a>
+              <a
+                id="hero-pexels-link"
+                href={personal.pexels}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pexels profile"
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '0.4rem',
+                  color: 'var(--text-secondary)', textDecoration: 'none',
+                  fontSize: '0.825rem', fontWeight: 500,
+                  transition: 'color 0.2s ease',
+                  padding: '0.4rem 0.5rem',
+                  borderRadius: '6px',
+                  border: '1px solid var(--border)',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--border-subtle)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.borderColor = 'var(--border)'; }}
+              >
+                <Camera size={16} />
+                Pexels
               </a>
             </motion.div>
           </div>
@@ -300,7 +328,13 @@ export default function Hero() {
             custom={0.5}
             className="hero-info-card"
           >
-            <div className="glass-card" style={{ padding: '1.75rem', minWidth: '240px' }}>
+            <div style={{
+              padding: '1.75rem',
+              minWidth: '240px',
+              background: 'var(--bg-surface)',
+              border: '1px solid var(--border)',
+              borderRadius: '8px'
+            }}>
               <div style={{
                 fontFamily: 'var(--font-mono)', fontSize: '0.65rem',
                 color: 'var(--text-muted)', letterSpacing: '0.12em',
@@ -310,21 +344,21 @@ export default function Hero() {
               </div>
               {[
                 { label: 'STATUS', value: 'Student', accent: true },
-                { label: 'FOCUS', value: 'AI / ML' },
+                { label: 'FOCUS', value: 'Web Dev' },
                 { label: 'BASED IN', value: 'Dhaka, BD' },
-                { label: 'GOAL', value: 'ML Engineer' },
+                { label: 'GOAL', value: 'Software Engineer' },
                 { label: 'OPEN TO', value: 'Internships' },
               ].map(({ label, value, accent }) => (
                 <div key={label} style={{
                   display: 'flex', justifyContent: 'space-between',
                   alignItems: 'center', paddingBottom: '0.75rem',
                   marginBottom: '0.75rem',
-                  borderBottom: '1px solid var(--border-subtle)',
+                  borderBottom: '1px solid var(--border)',
                 }}>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
                     {label}
                   </span>
-                  <span style={{ fontSize: '0.825rem', fontWeight: 500, color: accent ? 'var(--accent)' : 'var(--text-primary)' }}>
+                  <span style={{ fontSize: '0.825rem', fontWeight: 500, color: accent ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
                     {value}
                   </span>
                 </div>

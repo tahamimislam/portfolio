@@ -10,32 +10,26 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-// Skill icons as SVG emoji-style representations
+// Skill icons mapped to Devicon classes or emoji fallbacks
 const skillIcons = {
-  Python: '🐍',
-  'C++': '⚙️',
-  JavaScript: '⚡',
-  SQL: '🗄️',
-  HTML: '📄',
-  CSS: '🎨',
-  React: '⚛️',
-  FastAPI: '🚀',
+  Python: 'devicon-python-plain',
+  'C++': 'devicon-cplusplus-plain',
+  JavaScript: 'devicon-javascript-plain',
+  TypeScript: 'devicon-typescript-plain',
+  SQL: 'devicon-mysql-plain',
+  HTML: 'devicon-html5-plain',
+  CSS: 'devicon-css3-plain',
+  React: 'devicon-react-original',
+  FastAPI: 'devicon-fastapi-plain',
   'REST API': '🔗',
-  NumPy: '🔢',
-  Pandas: '🐼',
-  'Scikit-learn': '🤖',
-  'Machine Learning': '🧠',
-  Git: '🌿',
-  GitHub: '🐙',
+  NumPy: 'devicon-numpy-plain',
+  Pandas: 'devicon-pandas-plain',
+  'Scikit-learn': 'devicon-scikitlearn-plain',
+  Git: 'devicon-git-plain',
+  GitHub: 'devicon-github-original',
 };
 
-const categoryColors = {
-  Programming: { bg: 'rgba(99,102,241,0.06)', border: 'rgba(99,102,241,0.2)', accent: '#818cf8' },
-  Frontend: { bg: 'rgba(14,165,233,0.06)', border: 'rgba(14,165,233,0.2)', accent: '#38bdf8' },
-  Backend: { bg: 'rgba(16,185,129,0.06)', border: 'rgba(16,185,129,0.2)', accent: '#34d399' },
-  'AI / ML': { bg: 'rgba(168,85,247,0.06)', border: 'rgba(168,85,247,0.2)', accent: '#c084fc' },
-  Tools: { bg: 'rgba(245,158,11,0.06)', border: 'rgba(245,158,11,0.2)', accent: '#fbbf24' },
-};
+// Removed category colors to use a single accent system
 
 export default function Skills() {
   return (
@@ -76,7 +70,6 @@ export default function Skills() {
           {/* Skills rows */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             {skills.map((group, gi) => {
-              const colors = categoryColors[group.category] || categoryColors.Programming;
               return (
                 <motion.div
                   key={group.category}
@@ -107,42 +100,28 @@ export default function Skills() {
                     <span style={{
                       fontSize: '0.9rem',
                       fontWeight: 600,
-                      color: colors.accent,
+                      color: 'var(--text-primary)',
                     }}>
                       {group.category}
                     </span>
                   </div>
 
-                  {/* Skill badges */}
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
-                    {group.items.map((skill) => (
-                      <motion.div
-                        key={skill}
-                        whileHover={{ y: -2, scale: 1.03 }}
-                        transition={{ duration: 0.15 }}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.4rem',
-                          padding: '0.5rem 0.9rem',
-                          background: colors.bg,
-                          border: `1px solid ${colors.border}`,
-                          borderRadius: '8px',
-                          cursor: 'default',
-                        }}
-                      >
-                        <span style={{ fontSize: '0.9rem' }} aria-hidden="true">
-                          {skillIcons[skill] || '◆'}
-                        </span>
-                        <span style={{
-                          fontFamily: 'var(--font-mono)',
-                          fontSize: '0.8rem',
-                          fontWeight: 500,
-                          color: colors.accent,
-                        }}>
-                          {skill}
-                        </span>
-                      </motion.div>
+                  {/* Skill items */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center' }}>
+                    {group.items.map((skill, index) => (
+                      <div key={skill} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--text-secondary)' }}>
+                          {skillIcons[skill]?.startsWith('devicon-') ? (
+                            <i className={skillIcons[skill]} style={{ fontSize: '1rem', opacity: 0.7 }}></i>
+                          ) : (
+                            <span style={{ fontSize: '1rem', opacity: 0.7 }} aria-hidden="true">{skillIcons[skill] || '◆'}</span>
+                          )}
+                          <span style={{ fontSize: '0.95rem', fontWeight: 400, color: 'var(--text-primary)' }}>{skill}</span>
+                        </div>
+                        {index < group.items.length - 1 && (
+                          <span style={{ color: 'var(--border)', fontSize: '1.2rem', lineHeight: 1 }}>·</span>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </motion.div>

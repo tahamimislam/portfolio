@@ -8,13 +8,16 @@ export const personal = {
   name: "Tahamim Islam",
   firstName: "Tahamim",
   role: "CSE Undergraduate Student",
-  tagline: "AI / ML Engineer in the Making",
+  tagline: "Aspiring AI Engineer",
   bio: "Building intelligent systems and modern web applications with Python, React, FastAPI and Machine Learning.",
 
   // ── Update these with your real links ──
-  email: "your.email@example.com",          // ← replace with your email
-  github: "https://github.com/yourusername", // ← replace with your GitHub profile
-  linkedin: "https://linkedin.com/in/yourusername", // ← replace with your LinkedIn
+  email: "tahamim81@gmail.com",
+  github: "https://github.com/tahamimislam",
+  linkedin: "https://www.linkedin.com/in/tahamim-islam-25a71528b/",
+  leetcode: "https://leetcode.com/u/tahamimislam/",
+  codeforces: "https://codeforces.com/profile/Tahamim",
+  pexels: "https://www.pexels.com/@tahamim/",
 
   // ── CV download link (place cv.pdf in /public) ──
   cvLink: "/cv.pdf",
@@ -31,7 +34,7 @@ export const personal = {
 export const skills = [
   {
     category: "Programming",
-    items: ["Python", "C++", "JavaScript", "SQL"],
+    items: ["Python", "C++", "JavaScript", "TypeScript", "SQL"],
   },
   {
     category: "Frontend",
@@ -43,7 +46,7 @@ export const skills = [
   },
   {
     category: "AI / ML",
-    items: ["NumPy", "Pandas", "Scikit-learn", "Machine Learning"],
+    items: ["NumPy", "Pandas", "Scikit-learn"],
   },
   {
     category: "Tools",
@@ -54,33 +57,12 @@ export const skills = [
 export const projects = [
   {
     number: "01",
-    title: "AI Screenshot to Code",
+    title: "HumanityLink",
     description:
-      "An AI-powered application that converts UI screenshots into functional frontend code automatically. Leverages a vision-capable AI API to analyze design screenshots and generate clean HTML/CSS/React components.",
-    tech: ["React", "FastAPI", "AI API", "Python"],
-    github: "#",     // ← replace with your GitHub repo link
-    demo: "#",       // ← replace with your live demo link
+      "HumanityLink is a community-focused web platform designed to connect people who need assistance with people and organizations that can provide support.",
+    tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    github: "https://github.com/tahamimislam/DBMS_project",
     status: "In Progress",
-  },
-  {
-    number: "02",
-    title: "Patient Management API",
-    description:
-      "A REST API for managing patient records built with FastAPI. Implements CRUD operations, data validation with Pydantic, and a clean endpoint architecture following REST best practices.",
-    tech: ["Python", "FastAPI", "Pydantic", "REST API"],
-    github: "#",     // ← replace with your GitHub repo link
-    demo: "#",       // ← replace with your live demo link
-    status: "Completed",
-  },
-  {
-    number: "03",
-    title: "Machine Learning Project",
-    description:
-      "A machine learning application focused on data preprocessing, exploratory data analysis, model training, evaluation, and prediction. Implements multiple ML algorithms and compares their performance.",
-    tech: ["Python", "Pandas", "NumPy", "Scikit-learn"],
-    github: "#",     // ← replace with your GitHub repo link
-    demo: "#",       // ← replace with your live demo link
-    status: "Completed",
   },
 ];
 
@@ -101,14 +83,9 @@ export const focusAreas = [
     icon: "Brain",
   },
   {
-    title: "Machine Learning",
-    description: "Building and training models using classical and modern ML techniques.",
-    icon: "Cpu",
-  },
-  {
-    title: "Data Science",
-    description: "Working with data through analysis, visualization, and feature engineering.",
-    icon: "BarChart2",
+    title: "Full Stack Web Development",
+    description: "Building responsive and scalable web applications from front to back.",
+    icon: "Globe",
   },
   {
     title: "Data Structures & Algorithms",

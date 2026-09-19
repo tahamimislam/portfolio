@@ -59,9 +59,9 @@ export default function Navbar() {
           right: 0,
           zIndex: 100,
           transition: 'all 0.3s ease',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
+          borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
           background: scrolled
-            ? 'rgba(9, 9, 11, 0.88)'
+            ? 'rgba(10, 10, 12, 0.85)'
             : 'transparent',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
@@ -108,7 +108,7 @@ export default function Navbar() {
                   letterSpacing: '0.01em',
                   transition: 'all 0.2s ease',
                   color: activeSection === link.href.slice(1) ? 'var(--accent)' : 'var(--text-secondary)',
-                  background: activeSection === link.href.slice(1) ? 'rgba(99,102,241,0.08)' : 'transparent',
+                  background: 'transparent',
                 }}
                 className="nav-link-desktop"
                 aria-current={activeSection === link.href.slice(1) ? 'page' : undefined}
@@ -181,8 +181,8 @@ export default function Navbar() {
               fontSize: '1.1rem',
               fontWeight: 500,
               color: activeSection === link.href.slice(1) ? 'var(--accent)' : 'var(--text-primary)',
-              borderRadius: '10px',
-              background: activeSection === link.href.slice(1) ? 'rgba(99,102,241,0.1)' : 'transparent',
+              borderRadius: '6px',
+              background: 'transparent',
               transition: 'all 0.2s ease',
             }}
           >

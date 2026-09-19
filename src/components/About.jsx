@@ -15,7 +15,7 @@ const quickFacts = [
   { label: 'Degree', value: 'B.Sc. in CSE' },
   { label: 'Batch', value: '2024 – Present' },
   { label: 'Location', value: 'Dhaka, Bangladesh' },
-  { label: 'Focus', value: 'AI, ML & Backend' },
+  { label: 'Focus', value: 'Full Stack & Backend' },
   { label: 'Status', value: 'Seeking Internships' },
 ];
 
@@ -97,7 +97,7 @@ export default function About() {
                     justifyContent: 'space-between',
                     alignItems: 'flex-start',
                     padding: '0.85rem 0',
-                    borderBottom: '1px solid var(--border-subtle)',
+                    borderBottom: '1px solid var(--border)',
                     gap: '1rem',
                   }}>
                     <span style={{
