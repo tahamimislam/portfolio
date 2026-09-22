@@ -64,6 +64,15 @@ export const projects = [
     github: "https://github.com/tahamimislam/DBMS_project",
     status: "In Progress",
   },
+  {
+    number: "02",
+    title: "Mediapipe RPS Game",
+    description:
+      "An interactive Rock-Paper-Scissors game built using web technologies and Google's Mediapipe framework for real-time hand gesture recognition in the browser.",
+    tech: ["HTML", "CSS", "JavaScript", "Mediapipe"],
+    github: "https://github.com/tahamimislam/Mediapipe-RPS-game",
+    status: "Completed",
+  },
 ];
 
 export const education = [
