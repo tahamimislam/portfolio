@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         {/* Right: Social links */}
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
           {[
             { icon: <GithubIcon />, href: personal.github, label: 'GitHub', id: 'footer-github-link' },
             { icon: <LinkedinIcon />, href: personal.linkedin, label: 'LinkedIn', id: 'footer-linkedin-link' },

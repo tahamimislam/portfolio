@@ -206,7 +206,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.8}
-              style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}
             >
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-muted)', letterSpacing: '0.1em' }}>
                 FIND ME ON
@@ -344,9 +344,9 @@ export default function Hero() {
               </div>
               {[
                 { label: 'STATUS', value: 'Student', accent: true },
-                { label: 'FOCUS', value: 'Web Dev' },
+                { label: 'FOCUS', value: 'Full Stack Development' },
                 { label: 'BASED IN', value: 'Dhaka, BD' },
-                { label: 'GOAL', value: 'Software Engineer' },
+                { label: 'GOAL', value: 'AI Software Engineer' },
                 { label: 'OPEN TO', value: 'Internships' },
               ].map(({ label, value, accent }) => (
                 <div key={label} style={{
