@@ -58,14 +58,7 @@ export default function Hero() {
       }}
     >
       <div className="section-container" style={{ width: '100%', position: 'relative' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          gap: '3rem',
-          alignItems: 'center',
-        }}
-          className="hero-grid"
-        >
+        <div className="hero-grid">
           {/* ── Left: Main content ── */}
           <div>
             {/* Status pill */}
@@ -330,7 +323,7 @@ export default function Hero() {
           >
             <div style={{
               padding: '1.75rem',
-              minWidth: '240px',
+              minWidth: '280px',
               background: 'var(--bg-surface)',
               border: '1px solid var(--border)',
               borderRadius: '8px'
@@ -351,14 +344,14 @@ export default function Hero() {
               ].map(({ label, value, accent }) => (
                 <div key={label} style={{
                   display: 'flex', justifyContent: 'space-between',
-                  alignItems: 'center', paddingBottom: '0.75rem',
-                  marginBottom: '0.75rem',
+                  alignItems: 'flex-start', paddingBottom: '0.75rem',
+                  marginBottom: '0.75rem', gap: '1rem',
                   borderBottom: '1px solid var(--border)',
                 }}>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--text-muted)', letterSpacing: '0.08em', flexShrink: 0, marginTop: '0.15rem' }}>
                     {label}
                   </span>
-                  <span style={{ fontSize: '0.825rem', fontWeight: 500, color: accent ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
+                  <span style={{ fontSize: '0.825rem', fontWeight: 500, color: accent ? 'var(--text-primary)' : 'var(--text-secondary)', textAlign: 'right' }}>
                     {value}
                   </span>
                 </div>
